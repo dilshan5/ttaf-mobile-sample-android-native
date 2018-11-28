@@ -1,7 +1,7 @@
 package runner;
 
-import com.automation.qa.ttafmobilecore.util.CustomAbstractTestNGCucumberTests;
 import cucumber.api.CucumberOptions;
+import cucumber.api.testng.AbstractTestNGCucumberTests;
 import org.testng.annotations.Test;
 
 @CucumberOptions(
@@ -18,5 +18,5 @@ import org.testng.annotations.Test;
         tags = {"@smoke_1"}
 )
 @Test
-public class SmokeTest extends CustomAbstractTestNGCucumberTests {
+public class SmokeTest extends AbstractTestNGCucumberTests {
 }
