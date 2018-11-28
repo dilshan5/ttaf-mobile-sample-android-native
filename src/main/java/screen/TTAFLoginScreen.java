@@ -4,6 +4,7 @@ import com.automation.qa.ttafmobilecore.action.Common;
 import com.automation.qa.ttafmobilecore.page.BaseScreen;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
+import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import org.apache.log4j.Logger;
@@ -27,7 +28,10 @@ public class TTAFLoginScreen extends BaseScreen {
 
     public TTAFLoginScreen(AppiumDriver driver) {
         super(driver);
-        Common.hideMobileKeyBoard(driver);
+        //close the keyboard if available
+        if (((AndroidDriver) driver).isKeyboardShown()) {
+            Common.hideMobileKeyBoard(driver);
+        }
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
         waitUntilLoaded();
     }

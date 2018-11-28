@@ -26,7 +26,7 @@ public class TTAFSucessScreen extends BaseScreen {
     }
 
     public void waitUntilLoaded() {
-        new WebDriverWait(driver, 15).until(ExpectedConditions.visibilityOfElementLocated(By.id("txtSuccess")));
+        new WebDriverWait(driver, 35).until(ExpectedConditions.visibilityOfElementLocated(By.id("txtSuccess")));
 
     }
 

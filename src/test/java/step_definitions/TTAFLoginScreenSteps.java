@@ -20,15 +20,18 @@ public class TTAFLoginScreenSteps {
     @When("I fill {string} as Email address")
     public void i_fill_as_Email_address(String email) {
         ttafLoginScreen.set_Email(email);
+        LOGGER.info("set Email address");
     }
 
     @When("I fill {string} as Password")
     public void i_fill_as_Password(String pwd) {
         ttafLoginScreen.set_Password(pwd);
+        LOGGER.info("set Password");
     }
 
     @When("I click Login button")
     public void i_click_Login_button() {
         ttafLoginScreen.click_Login();
+        LOGGER.info("Click Login button");
     }
 }
