@@ -1,6 +1,5 @@
 package screen;
 
-import com.automation.qa.ttafmobilecore.action.Common;
 import com.automation.qa.ttafmobilecore.page.BaseScreen;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
@@ -30,7 +29,7 @@ public class TTAFLoginScreen extends BaseScreen {
         super(driver);
         //close the keyboard if available
         if (((AndroidDriver) driver).isKeyboardShown()) {
-            Common.hideMobileKeyBoard(driver);
+            driver.hideKeyboard();
         }
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
         waitUntilLoaded();
