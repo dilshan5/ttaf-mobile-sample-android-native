@@ -22,7 +22,7 @@
             <class name="runner.SmokeTest"/>
         </classes>
     </test>
-
+<!--
       <test name="Emulator-II">
             <parameter name="appium-server-port" value="3456"/>
             <parameter name="mobile-device-id" value="emulator-5556"/>
@@ -33,7 +33,7 @@
             <classes>
                 <class name="runner.SmokeTest"/>
             </classes>
-        </test>
+        </test>-->
 
     <!--
         <test name="Nexus 6">
