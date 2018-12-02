@@ -16,6 +16,6 @@ echo.
 
 
 start appium -a 127.0.0.1 -p 1234 -bp 2345 --udid emulator-5554 --chromedriver-port 5645  --session-override
-rem start appium -a 127.0.0.1 -p 3456 -bp 4567 --udid emulator-5556 --chromedriver-port 5745 --session-override
+start appium -a 127.0.0.1 -p 3456 -bp 4567 --udid emulator-5556 --chromedriver-port 5745 --session-override
 
 

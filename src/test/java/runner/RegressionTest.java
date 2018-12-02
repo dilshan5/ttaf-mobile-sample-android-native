@@ -1,7 +1,7 @@
 package runner;
 
+import com.automation.qa.ttafmobilecore.driver.TestBase;
 import cucumber.api.CucumberOptions;
-import cucumber.api.testng.AbstractTestNGCucumberTests;
 import org.testng.annotations.Test;
 
 @CucumberOptions(
@@ -18,6 +18,6 @@ import org.testng.annotations.Test;
         tags = {"@regression"}
 )
 @Test
-public class RegressionTest extends AbstractTestNGCucumberTests {
+public class RegressionTest extends TestBase {
 }
 

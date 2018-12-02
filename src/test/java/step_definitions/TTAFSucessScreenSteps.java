@@ -1,19 +1,18 @@
 package step_definitions;
 
-import com.automation.qa.ttafmobilecore.driver.DriverManager;
+import com.automation.qa.ttafmobilecore.driver.TestBase;
+import com.automation.qa.ttafmobilecore.driver.ThreadLocalDriver;
 import cucumber.api.java.en.Then;
-import io.appium.java_client.AppiumDriver;
 import org.apache.log4j.Logger;
 import screen.TTAFSucessScreen;
 
-public class TTAFSucessScreenSteps {
+public class TTAFSucessScreenSteps extends TestBase {
     private static final Logger LOGGER = Logger.getLogger(String.valueOf(TTAFSucessScreenSteps.class));
-    AppiumDriver driver = DriverManager.getDriver();
     TTAFSucessScreen tTAFSucessScreen;
 
-    @Then("I should see message as {string}")
-    public void i_should_see_message_as(String msg) {
-        tTAFSucessScreen = new TTAFSucessScreen(driver);
+    @Then("^I should see message as \"([^\"]*)\"$")
+    public void i_should_see_message_as(String msg) throws Throwable {
+        tTAFSucessScreen = new TTAFSucessScreen(ThreadLocalDriver.getTLDriver());
         tTAFSucessScreen.check_And_Validate_LoginMessage(msg);
     }
 }
