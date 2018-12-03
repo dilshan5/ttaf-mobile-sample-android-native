@@ -6,9 +6,9 @@
     <test name="Android Emulator - I">
         <parameter name="appium-server-port" value="1234"/>
         <parameter name="mobile-device-id" value="emulator-5554"/>
-        <parameter name="mobile-version" value="5.1.1"/>
+        <parameter name="mobile-version" value="9.0"/>
         <parameter name="browserName" value="Chrome"/>
-        <parameter name="mobile-device-name" value="Nexus_S_API_22"/>
+        <parameter name="mobile-device-name" value="Pixel_2_API_28"/>
         <classes>
             <class name="runner.RegressionTest"/>
         </classes>

@@ -1,6 +1,6 @@
 Feature: User Successful Login Feature
 
-  @smoke_1
+  @smoke_1 @regression
   Scenario: Login the app successfully as a candidate
     Given I am on the Login Screen
     When I fill "sample@gmail.com" as Email address
