@@ -1,14 +1,7 @@
 package runner;
 
-import com.automation.qa.ttafmobilecore.driver.TestBase;
+import com.automation.qa.ttafmobilecore.driver.DriverFactory;
 import cucumber.api.CucumberOptions;
-
-import cucumber.api.testng.AbstractTestNGCucumberTests;
-import cucumber.api.testng.CucumberFeatureWrapper;
-import cucumber.api.testng.TestNGCucumberRunner;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 @CucumberOptions(
@@ -25,6 +18,6 @@ import org.testng.annotations.Test;
         tags = {"@smoke_1"}
 )
 @Test
-public class SmokeTest extends TestBase {
+public class SmokeTest extends DriverFactory {
 
 }

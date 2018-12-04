@@ -1,20 +1,21 @@
 package step_definitions;
 
-import com.automation.qa.ttafmobilecore.driver.TestBase;
-import com.automation.qa.ttafmobilecore.driver.ThreadLocalDriver;
+import com.automation.qa.ttafmobilecore.driver.DriverFactory;
+import com.automation.qa.ttafmobilecore.driver.DriverManager;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.When;
 import org.apache.log4j.Logger;
 import screen.TTAFLoginScreen;
 
-public class TTAFLoginScreenSteps extends TestBase {
+
+public class TTAFLoginScreenSteps extends DriverFactory {
     private static final Logger LOGGER = Logger.getLogger(String.valueOf(TTAFLoginScreenSteps.class));
 
     TTAFLoginScreen ttafLoginScreen;
 
     @Given("^I am on the Login Screen$")
     public void i_am_on_the_Login_Screen() throws Throwable {
-        ttafLoginScreen = new TTAFLoginScreen(ThreadLocalDriver.getTLDriver());
+        ttafLoginScreen = new TTAFLoginScreen(DriverManager.getTLDriver());
     }
 
     @When("^I fill \"([^\"]*)\" as Email address$")

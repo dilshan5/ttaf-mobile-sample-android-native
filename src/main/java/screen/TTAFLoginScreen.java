@@ -12,19 +12,17 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.util.concurrent.TimeUnit;
-
 
 public class TTAFLoginScreen extends BaseScreen {
     private static final Logger LOGGER = Logger.getLogger(String.valueOf(TTAFLoginScreen.class));
 
-    @AndroidFindBy(id = "com.sourcey.materialloginexample:id/input_email")
+    @AndroidFindBy(id = "input_email")
     private MobileElement emailField;
 
-    @AndroidFindBy(id = "com.sourcey.materialloginexample:id/input_password")
+    @AndroidFindBy(id = "input_password")
     private MobileElement passwordField;
 
-    @AndroidFindBy(id = "com.sourcey.materialloginexample:id/btn_login")
+    @AndroidFindBy(id = "btn_login")
     private MobileElement loginButton;
 
     public TTAFLoginScreen(AppiumDriver driver) {
@@ -39,7 +37,7 @@ public class TTAFLoginScreen extends BaseScreen {
     }
 
     public void waitUntilLoaded() {
-        new WebDriverWait(driver, 15).until(ExpectedConditions.visibilityOfElementLocated(By.id("com.sourcey.materialloginexample:id/input_email")));
+        new WebDriverWait(driver, 15).until(ExpectedConditions.visibilityOfElementLocated(By.id("input_email")));
     }
 
     public void set_Password(String password) throws Exception {
