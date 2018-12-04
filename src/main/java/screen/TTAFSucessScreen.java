@@ -11,6 +11,8 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.concurrent.TimeUnit;
+
 import static org.testng.Assert.assertTrue;
 
 public class TTAFSucessScreen extends BaseScreen {
@@ -29,7 +31,7 @@ public class TTAFSucessScreen extends BaseScreen {
         new WebDriverWait(driver, 35).until(ExpectedConditions.visibilityOfElementLocated(By.id("txtSuccess")));
     }
 
-    public void check_And_Validate_LoginMessage(String expected) {
+    public void check_And_Validate_LoginMessage(String expected)throws Exception {
         assertTrue(sucessText.getText().equals(expected));
         LOGGER.info("Validate ! Retry Message.");
     }
