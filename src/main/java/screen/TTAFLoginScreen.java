@@ -27,7 +27,6 @@ public class TTAFLoginScreen extends BaseScreen {
 
     public TTAFLoginScreen(AppiumDriver driver) {
         super(driver);
-        //    this.driver = driver;
         //close the keyboard if available
         if (((AndroidDriver) driver).isKeyboardShown()) {
             driver.hideKeyboard();

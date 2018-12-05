@@ -8,7 +8,7 @@ import screen.TTAFSucessScreen;
 
 public class TTAFSucessScreenSteps extends DriverFactory {
     private static final Logger LOGGER = Logger.getLogger(String.valueOf(TTAFSucessScreenSteps.class));
-    TTAFSucessScreen tTAFSucessScreen;
+    private TTAFSucessScreen tTAFSucessScreen;
 
     @Then("^I should see message as \"([^\"]*)\"$")
     public void i_should_see_message_as(String msg) throws Throwable {

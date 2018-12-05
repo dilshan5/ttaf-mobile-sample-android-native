@@ -1,7 +1,7 @@
 Feature: User Successful Login Feature
 
   @smoke_1 @regression
-  Scenario: Login the app successfully as a candidate
+  Scenario: Login the application successfully as a User
     Given I am on the Login Screen
     When I fill "sample@gmail.com" as Email address
     And I fill "sample12" as Password

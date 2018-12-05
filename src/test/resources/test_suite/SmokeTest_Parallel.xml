@@ -3,12 +3,12 @@
 
 <suite name="TTAF - SmokeTest - Multiple Android Device Testing in Parallel" parallel="tests" verbose="10"
        configfailurepolicy="continue"
-       thread-count="2">
+       thread-count="3">
 
     <test name="Android Emulator - I">
         <parameter name="appium-server-port" value="1234"/>
         <parameter name="mobile-device-id" value="emulator-5554"/>
-        <parameter name="mobile-version" value="9"/>
+        <parameter name="mobile-version" value="9.0"/>
         <parameter name="browserName" value="Chrome"/>
         <parameter name="mobile-device-name" value="Pixel_2_API_28"/>
         <classes>
@@ -27,17 +27,14 @@
         </classes>
     </test>
 
-    <!--
-        <test name="Android Device - I">
-            <parameter name="appium-server-port" value="1345"/>
-            <parameter name="mobile-device-id" value="ZX1G22TPD3"/>
-            <parameter name="mobile-version" value="7.1.1"/>
-            <parameter name="browserName" value="chrome"/>
-            <parameter name="mobile-device-name" value="Nexus 6"/>
-            <parameter name="UiAutomator2-systemPort" value="8003"/>
-            <classes>
-                <class name="runner.SmokeTest"/>
-            </classes>
-        </test>-->
-
+    <test name="Android Nexus 6">
+        <parameter name="appium-server-port" value="1345"/>
+        <parameter name="mobile-device-id" value="ZX1G22TPD3"/>
+        <parameter name="mobile-version" value="7.1.1"/>
+        <parameter name="browserName" value="chrome"/>
+        <parameter name="mobile-device-name" value="Nexus 6"/>
+        <classes>
+            <class name="runner.SmokeTest"/>
+        </classes>
+    </test>
 </suite>

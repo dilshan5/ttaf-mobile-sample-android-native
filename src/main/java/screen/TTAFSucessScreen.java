@@ -11,8 +11,6 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.util.concurrent.TimeUnit;
-
 import static org.testng.Assert.assertTrue;
 
 public class TTAFSucessScreen extends BaseScreen {

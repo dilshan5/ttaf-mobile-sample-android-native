@@ -10,8 +10,7 @@ import screen.TTAFLoginScreen;
 
 public class TTAFLoginScreenSteps extends DriverFactory {
     private static final Logger LOGGER = Logger.getLogger(String.valueOf(TTAFLoginScreenSteps.class));
-
-    TTAFLoginScreen ttafLoginScreen;
+    private TTAFLoginScreen ttafLoginScreen;
 
     @Given("^I am on the Login Screen$")
     public void i_am_on_the_Login_Screen() throws Throwable {
