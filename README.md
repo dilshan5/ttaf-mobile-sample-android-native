@@ -3,7 +3,10 @@ This is a Cucumber - Android test automation project for native applications
 
 # Getting Started
  First you need to clone the 'master' branch of this project into your local machine. After that you can open configuration.properties file
- and set your desired device for testing. Paste your apk file into 'appstore' folder
+ and set your desired device for testing. 
+ Paste your apk file into 'appstore' folder. 
+ Set your Mobile platform (Android/iOS)
+ Change your device ID and Appium port
  
 # Set your android emulator/device 
   - Edit 'start_all_android_emulators.bat' file and change the device name
