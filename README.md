@@ -13,7 +13,7 @@ This is a Cucumber - Android test automation project for native applications
   - Set path to your local install emulator folder in SDK folder 
   - Edit 'start_all_android_emulators.bat' file as you need
   
-  After you done with changes, run the both BAT files. 
+  After you done with changes, run the both BAT files. Then your emulators will start and connect with Appium server.
  
 # Run individual Test scenario
 
