@@ -14,5 +14,5 @@ echo.
 cd /d "C:\Users\dilshanf\AppData\Local\Android\Sdk\emulator"
 
 start emulator -avd Pixel_2_API_28
-start emulator -avd Nexus_S_API_22
+start emulator -avd Nexus_4_API_22
 
