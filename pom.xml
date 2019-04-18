@@ -7,9 +7,8 @@
     <groupId>com.automation.qa</groupId>
     <artifactId>ttaf-mobile-sample-android-native</artifactId>
     <version>1.0-SNAPSHOT</version>
-
     <properties>
-        <ttaf.mobile.core.version>1.0-SNAPSHOT</ttaf.mobile.core.version>
+        <ttaf.mobile.core.version>1.0.2-SNAPSHOT</ttaf.mobile.core.version>
         <maven.surefire.plugin>2.21.0</maven.surefire.plugin>
     </properties>
     <dependencies>
@@ -17,22 +16,6 @@
             <groupId>com.automation.qa</groupId>
             <artifactId>ttaf-mobile-core</artifactId>
             <version>${ttaf.mobile.core.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>io.cucumber</groupId>
-            <artifactId>cucumber-testng</artifactId>
-            <version>4.0.0</version>
-        </dependency>
-        <dependency>
-            <groupId>io.cucumber</groupId>
-            <artifactId>cucumber-java</artifactId>
-            <version>4.0.0</version>
-        </dependency>
-        <dependency>
-            <groupId>info.cukes</groupId>
-            <artifactId>cucumber-java</artifactId>
-            <version>1.2.5</version>
-            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>io.qameta.allure</groupId>
