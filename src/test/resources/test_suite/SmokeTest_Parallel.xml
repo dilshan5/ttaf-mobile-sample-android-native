@@ -1,33 +1,33 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<suite name="TTAF - SmokeTest - Multiple Android Device Testing in Parallel" parallel="tests" verbose="10"
+<suite name="TTAF - SmokeTest - Native Android Device Testing in Parallel" parallel="tests" verbose="10"
        configfailurepolicy="continue"
        thread-count="3">
 
     <test name="Android Emulator - I">
-        <parameter name="appium-server-port" value="1234"/>
-        <parameter name="mobile-device-id" value="emulator-5554"/>
-        <parameter name="mobile-version" value="9.0"/>
-        <parameter name="browserName" value="Chrome"/>
-        <parameter name="mobile-device-name" value="Pixel_2_API_28"/>
+        <parameter name="appium-server-port" value="3456"/>
+        <parameter name="mobile-device-id" value="emulator-5556"/>
+        <parameter name="mobile-version" value="7.0"/>
+        <parameter name="browserName" value="chrome"/>
+        <parameter name="mobile-device-name" value="Pixel_2_API_24"/>
         <classes>
             <class name="runner.SmokeTest"/>
         </classes>
     </test>
 
     <test name="Android Emulator - II">
-        <parameter name="appium-server-port" value="3456"/>
-        <parameter name="mobile-device-id" value="emulator-5556"/>
+        <parameter name="appium-server-port" value="1234"/>
+        <parameter name="mobile-device-id" value="emulator-5554"/>
         <parameter name="mobile-version" value="5.1.1"/>
-        <parameter name="browserName" value="Chrome"/>
+        <parameter name="browserName" value="chrome"/>
         <parameter name="mobile-device-name" value="Nexus_4_API_22"/>
         <classes>
             <class name="runner.SmokeTest"/>
         </classes>
     </test>
 
-    <test name="Android Nexus 6">
+<!--    <test name="Android Nexus 6">
         <parameter name="appium-server-port" value="1345"/>
         <parameter name="mobile-device-id" value="ZX1G22TPD3"/>
         <parameter name="mobile-version" value="7.1.1"/>
@@ -36,5 +36,5 @@
         <classes>
             <class name="runner.SmokeTest"/>
         </classes>
-    </test>
+    </test>-->
 </suite>

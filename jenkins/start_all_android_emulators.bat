@@ -11,8 +11,8 @@ rem  ============================================
 echo Starting All Andriod emulators..........
 echo.
 
-cd /d "C:\Users\dilshanf\AppData\Local\Android\Sdk\emulator"
+cd /d "D:\work\sdk1\emulator"
 
-start emulator -avd Pixel_2_API_28
+start emulator -avd Pixel_2_API_24
 start emulator -avd Nexus_4_API_22
 
