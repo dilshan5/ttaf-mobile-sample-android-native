@@ -1,0 +1,40 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/circleci-ttaf-android-native
+    docker:
+      - image: circleci/android:api-30
+    environment:
+      - JVM_OPTS: -Xmx4G
+    steps:
+      - checkout
+      - restore_cache: # restore the saved cache after the first run or if `pom.xml` has changed
+          key: circleci-ttaf-android-native-{{ checksum "pom.xml" }}
+      - run:
+          name: Install Maven dependencies Offline
+          command: mvn dependency:go-offline # gets the project dependencies
+      - save_cache: # saves the project dependencies
+          paths:
+            - ~/.m2
+          key: circleci-ttaf-android-native-{{ checksum "pom.xml" }}
+      - run:
+          name: Setup emulator
+          command: sdkmanager "system-images;android-29;google_apis_playstore;x86_64" && echo "no" | avdmanager create avd -n gtest1 -k "system-images;android-29;google_apis_playstore;x86_64"
+      - run:
+          name: Launch emulator
+          command: export LD_LIBRARY_PATH=${ANDROID_HOME}/emulator/lib64:${ANDROID_HOME}/emulator/lib64/qt/lib && emulator64-arm -avd gtest1 -noaudio -no-boot-anim -no-window -accel auto -verbose
+          background: true
+      - run:
+          name: Wait emulator
+          command: |
+            # wait for it to have booted
+            circle-android wait-for-boot
+            # unlock the emulator screen
+            sleep 30
+            adb shell input keyevent 82
+      - run:
+          name: Run Andriod Tests
+          command: mvn clean install -PSmokeTest_Parallel
+      - store_artifacts: # for display in Artifacts: https://circleci.com/docs/2.0/artifacts/
+          path: target/cucumber-reports
+          destination: reports
