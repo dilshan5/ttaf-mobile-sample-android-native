@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="TTAF - SmokeTest - Multiple Android Device Testing in Parallel" parallel="tests" verbose="10"
+       configfailurepolicy="continue"
+       thread-count="6">
+
+    <test name="Android Emulator - I">
+        <parameter name="appium-server-port" value="1234"/>
+        <parameter name="mobile-device-id" value="emulator-5554"/>
+        <parameter name="mobile-version" value="9.0"/>
+        <parameter name="browserName" value="Chrome"/>
+        <parameter name="mobile-device-name" value="gtest1"/>
+        <classes>
+            <class name="runner.SmokeTest"/>
+        </classes>
+    </test>
+
+ <!--   <test name="Android Emulator - II">
+        <parameter name="appium-server-port" value="3456"/>
+        <parameter name="mobile-device-id" value="emulator-5556"/>
+        <parameter name="mobile-version" value="5.1.1"/>
+        <parameter name="browserName" value="Chrome"/>
+        <parameter name="mobile-device-name" value="Nexus_4_API_22"/>
+        <classes>
+            <class name="runner.SmokeTest"/>
+        </classes>
+    </test>
+
+    <test name="Android Nokia 3.1">
+        <parameter name="appium-server-port" value="1345"/>
+        <parameter name="mobile-device-id" value="ES2BA80609004132"/>
+        <parameter name="mobile-version" value="8.1.0"/>
+        <parameter name="browserName" value="chrome"/>
+        <parameter name="mobile-device-name" value="Nokia 3"/>
+        <classes>
+            <class name="runner.SmokeTest"/>
+        </classes>
+    </test>
+
+    <test name="Android Samsung S10e">
+        <parameter name="appium-server-port" value="1325"/>
+        <parameter name="mobile-device-id" value="RF8M221HNRX"/>
+        <parameter name="mobile-version" value="8.1.0"/>
+        <parameter name="browserName" value="chrome"/>
+        <parameter name="mobile-device-name" value="Samsung S10e"/>
+        <classes>
+            <class name="runner.SmokeTest"/>
+        </classes>
+    </test>-->
+</suite>

@@ -1,25 +1,51 @@
 # Tronium Test Automation Framework - Mobile Native Application Test
 This is a Cucumber - Android test automation project for native applications
 
+## Prerequisites:
+
+1. Install Appium
+2. Install Android SDK
+3. Create an Emulator
+
 # Getting Started
- First you need to clone the 'master' branch of this project into your local machine. After that you can open configuration.properties file
- and set your desired device for testing. 
- Paste your apk file into 'appstore' folder. 
- Set your Mobile platform (Android/iOS)
- Change your device ID and Appium port
+1. In a Terminal/Command session, install Git, navigate/make a folder, then:
+
+   ```
+   git clone https://github.com/dilshan5/ttaf-mobile-sample-android-native.git
+   cd ttaf-mobile-sample-android-native
+   ```
+2. Goto configuration.properties file and set,
+    1. mobile-platform
+    2. mobile-app-location
+    3. mobile-app-name
+3. Paste your apk file into `appstore` folder.  
+
  
 # Set your android emulator/device 
-  - Edit 'start_all_android_emulators.bat' file and change the device name
+  - Edit `start_all_android_emulators` file and change the device name
   - Set path to your local install emulator folder in SDK folder 
-  - Edit 'start_all_android_emulators.bat' file as you need
+  - Edit `register_devices_with_appium` file as you need
+
+  Please follow following format:
+  ```
+  appium -a 127.0.0.1 -p 1234 -bp 2345 --udid <emulatorname> --chromedriver-port 5645  --session-override --default-capabilities "{\"systemPort\":8200}"
+  ```  
   
-  After you done with changes, run the both BAT files. Then your emulators will start and connect with Appium server.
+  After you done with changes, run the register_devices_with_appium and start_all_android_emulators BAT files. Then your emulators will start and connect with Appium server.
  
-# Run individual Test scenario
+ **Note :** For Windows machine use BAT file and for Linux versions use Shell Script
 
-Goto Feature file and right mouse click on the scenario which you want to run.
+# Edit Test suite
 
-# Running the test suite
+Go to the `SmokeTest_Parallel.xml`.
+
+You can change the `mobile-device-id` and `mobile-device-name` according to your local machine.
+
+# Running the test suite via test suite
+
+Go to the `SmokeTest_Parallel.xml` . Right click and run the suite.
+
+# Running the test suite via CLI
 In the terminal window type following command,
   
        mvn clean install
@@ -30,10 +56,6 @@ In the terminal window type following command,
   
       mvn clean -PSmokeTest
   
-# Edit existing Test suite
-
-You can change the platform, Browser name and browser version according to your local machine.
-
 # Enable Selenium grid
 
 Set Up the selenium grid and change the Selenium grid URL in the configuration.properties file. Then run your distributed test suite.
