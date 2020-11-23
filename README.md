@@ -1,11 +1,11 @@
 # Tronium Test Automation Framework - Mobile Native Application Test
-This is a Cucumber - Android test automation project for native applications
+This is a Cucumber - Android test automation project for native applications.
 
 ## Prerequisites:
 
 1. Install Appium
 2. Install Android SDK
-3. Create an Emulator
+3. Create Emulator(s) 
 
 # Getting Started
 1. In a Terminal/Command session, install Git, navigate/make a folder, then:
@@ -14,56 +14,71 @@ This is a Cucumber - Android test automation project for native applications
    git clone https://github.com/dilshan5/ttaf-mobile-sample-android-native.git
    cd ttaf-mobile-sample-android-native
    ```
-2. Goto configuration.properties file and set,
+2. Goto `configuration.properties` file and set,
     1. mobile-platform
     2. mobile-app-location
     3. mobile-app-name
 3. Paste your apk file into `appstore` folder.  
 
- 
-# Set your android emulator/device 
-  - Edit `start_all_android_emulators` file and change the device name
-  - Set path to your local install emulator folder in SDK folder 
-  - Edit `register_devices_with_appium` file as you need
+# Set your android test device 
+1. If you use a real android device then, 
+    1. NO need to run `start_all_android_emulators` file. 
+    2. Plug the device(s) 
+    3. To get `mobile-device-id` (Unique Device Identifier or UDID), run command `adb devices` on CLI
+    4. Edit `register_devices_with_appium` file and run
 
-  Please follow following format:
+1. If you use a real android emulator then,  
+    1. Edit `start_all_android_emulators` file and change the emulator name(s) (eg: `gtest1`)
+    2. Set path to your local install emulator folder in SDK folder 
+    3. Run `start_all_android_emulators` file
+    3. Edit `register_devices_with_appium` file and run
+
+  Please follow the following format:
   ```
-  appium -a 127.0.0.1 -p 1234 -bp 2345 --udid <emulatorname> --chromedriver-port 5645  --session-override --default-capabilities "{\"systemPort\":8200}"
+  appium -a 127.0.0.1 -p <appium-server-port> -bp 2345 --udid <mobile-device-id> --chromedriver-port 5645  --session-override --default-capabilities "{\"systemPort\":8200}"
   ```  
   
-  After you done with changes, run the register_devices_with_appium and start_all_android_emulators BAT files. Then your emulators will start and connect with Appium server.
+  **Notes :** 
+  
+  - If you want to run the same test on multiple devices in parallel, then use unique `appium-server-port` for each device.
+  - For Windows machine use BAT files and for Linux versions use Shell Scripts
+
+ # Edit Test suite
  
- **Note :** For Windows machine use BAT file and for Linux versions use Shell Script
-
-# Edit Test suite
-
-Go to the `SmokeTest_Parallel.xml`.
-
-You can change the `mobile-device-id` and `mobile-device-name` according to your local machine.
+ Go to the `SmokeTest_Parallel.xml`.
+ 
+ You can change the `mobile-device-id`, `appium-server-port` and `mobile-device-name` according to your emulator/mobile device.
+ 
 
 # Running the test suite via test suite
 
 Go to the `SmokeTest_Parallel.xml` . Right click and run the suite.
 
 # Running the test suite via CLI
-In the terminal window type following command,
+In the terminal window type the following command,
+
+``
+ mvn clean install
+``
   
-       mvn clean install
-  
- Make sure that you successfully import all the maven dependencies. After that run the following command to start the execution,
+ Make sure you successfully import all the maven dependencies. After that run the following command to start the execution,
 
  mvn clean -P<suite_name>
-  
-      mvn clean -PSmokeTest
+ 
+ ``
+ mvn clean -PSmokeTest
+ `` 
   
 # Enable Selenium grid
 
-Set Up the selenium grid and change the Selenium grid URL in the configuration.properties file. Then run your distributed test suite.
+Set Up the selenium grid and change the Selenium grid URL in the `configuration.properties` file. Then run your distributed test suite.
 
 # View Allure report 
 
-First you need to download allure from https://github.com/allure-framework/allure2/releases
+First, you need to download allure from https://github.com/allure-framework/allure2/releases
 
-Then add the bin folder location into your PATH variable.Once you run your test suite, 'allure-results' directory will create inside target directory. Copy the path of it. Then open the command prompt. Run following command,
+Then add the bin folder location into your PATH variable.Once you run your test suite, 'allure-results' directory will create inside target directory. Copy the path of it. Then open the command prompt. Run the following command,
 
-      allure serve <location to your allure-results directory>
+``
+allure serve <location to your allure-results directory>
+``
