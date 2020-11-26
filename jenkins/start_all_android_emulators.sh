@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
-rem  ============= Execute on Ubuntu/Linux Machine ===============================
-rem  Used for Starting all andriod emulators
-rem  coded by Dilshan fernando
-rem  ============================================
+#  ============= Execute on Ubuntu/Linux Machine ===============================
+#  Used for Starting all andriod emulators
+#  coded by Dilshan fernando
+#  ============================================
 
 rem PATH to android emulator
 cd "/home/user/android-sdk/emulator"

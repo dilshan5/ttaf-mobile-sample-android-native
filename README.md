@@ -15,9 +15,11 @@ This is a Cucumber - Android test automation project for native applications.
    cd ttaf-mobile-sample-android-native
    ```
 2. Goto `configuration.properties` file and set,
-    1. mobile-platform
-    2. mobile-app-location
-    3. mobile-app-name
+    1. mobile-platform , (if needed)
+    2. mobile-app-location 
+    3. mobile-app-name , (if needed)
+    4. mobile-app-package , (if needed)
+    5. mobile-app-launch-activity , (if needed)
 3. Paste your apk file into `appstore` folder.  
 
 # Set your android test device 
@@ -40,7 +42,7 @@ This is a Cucumber - Android test automation project for native applications.
   
   **Notes :** 
   
-  - If you want to run the same test on multiple devices in parallel, then use unique `appium-server-port` for each device.
+  - If you want to run the same test on multiple devices in parallel, then please make sure to register those devices with Appium server with unique `appium-server-port` and `systemPort` for each device.
   - For Windows machine use BAT files and for Linux versions use Shell Scripts
 
  # Edit Test suite
@@ -55,18 +57,12 @@ This is a Cucumber - Android test automation project for native applications.
 Go to the `SmokeTest_Parallel.xml` . Right click and run the suite.
 
 # Running the test suite via CLI
-In the terminal window type the following command,
-
-``
- mvn clean install
-``
-  
  Make sure you successfully import all the maven dependencies. After that run the following command to start the execution,
 
- mvn clean -P<suite_name>
+ mvn clean install -P<suite_name>
  
  ``
- mvn clean -PSmokeTest
+ mvn clean install -PSmokeTest_Parallel
  `` 
   
 # Enable Selenium grid
