@@ -71,9 +71,26 @@ Set Up the selenium grid and change the Selenium grid URL in the `configuration.
 
 # View Allure report 
 
+## In Windows
+
 First, you need to download allure from https://github.com/allure-framework/allure2/releases
 
 Then add the bin folder location into your PATH variable.Once you run your test suite, 'allure-results' directory will create inside target directory. Copy the path of it. Then open the command prompt. Run the following command,
+
+``
+allure serve <location to your allure-results directory>
+``
+
+## In Ubuntu
+
+````
+curl -o allure-2.6.0.tgz -Ls https://dl.bintray.com/qameta/generic/io/qameta/allure/allure/2.6.0/allure-2.6.0.tgz   
+sudo tar -zxvf allure-2.6.0.tgz -C /opt/   
+sudo ln -s /opt/allure-2.6.0/bin/allure /usr/bin/allure  
+allure --version 
+````
+
+Once you run your test suite, 'allure-results' directory will create inside target directory. Copy the path of it. Then open the command prompt. Run the following command,
 
 ``
 allure serve <location to your allure-results directory>
